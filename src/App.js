@@ -395,13 +395,19 @@ function App() {
               showTextRowsSelected: false,
               selectionProps: (rowData) => ({
                 disabled: rowData.age == null,
-                // color:"primary"
               }),
               grouping: true,
               columnsButton: true,
               rowStyle: (data, index) =>
-                index % 2 === 0 ? { background: "#f5f5f5" } : null,
-              headerStyle: { background: "#f44336", color: "#fff" },
+                index % 2 === 0
+                  ? {
+                      background: "#f5f5f5",
+                      fontFamily: "Roboto",
+                      fontSize: "14px",
+                      fontWeight: "semibold",
+                    }
+                  : null,
+              headerStyle: { background: "#20b2aa", color: "#fff" },
             }}
             title="Student Information"
             icons={{ Add: () => <AddIcon /> }}

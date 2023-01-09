@@ -7,3 +7,11 @@
 .bannerBg {
   background-color: lightseagreen !important;
 }
+
+.MuiTableCell-root.MuiTableCell-body {
+  background: none !important;
+}
+
+.MuiTableCell-root.MuiTableCell-body.MuiTableCell-alignLeft div {
+  background: none !important;
+}
