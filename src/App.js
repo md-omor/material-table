@@ -1,5 +1,8 @@
 import { Menu, Transition } from "@headlessui/react";
-import { Fragment } from "react";
+import AddIcon from "@material-ui/icons/Add";
+import GetAppIcon from "@material-ui/icons/GetApp";
+import MaterialTable from "material-table";
+import { Fragment, useState } from "react";
 import { BiChevronDown } from "react-icons/bi";
 import { FaRegUser } from "react-icons/fa";
 import { FiSettings } from "react-icons/fi";
@@ -10,156 +13,156 @@ function App() {
     return classes.filter(Boolean).join(" ");
   }
 
-  // const [tableData, setTableData] = useState([
-  //   {
-  //     name: "Raj",
-  //     email: "Raj@gmail.com",
-  //     phone: 7894561230,
-  //     age: null,
-  //     gender: "M",
-  //     city: "Chennai",
-  //     fee: 78456,
-  //   },
-  //   {
-  //     name: "Mohan",
-  //     email: "mohan@gmail.com",
-  //     phone: 7845621590,
-  //     age: 35,
-  //     gender: "M",
-  //     city: "Delhi",
-  //     fee: 456125,
-  //   },
-  //   {
-  //     name: "Sweety",
-  //     email: "sweety@gmail.com",
-  //     phone: 741852912,
-  //     age: 17,
-  //     gender: "F",
-  //     city: "Noida",
-  //     fee: 458796,
-  //   },
-  //   {
-  //     name: "Vikas",
-  //     email: "vikas@gmail.com",
-  //     phone: 9876543210,
-  //     age: 20,
-  //     gender: "M",
-  //     city: "Mumbai",
-  //     fee: 874569,
-  //   },
-  //   {
-  //     name: "Neha",
-  //     email: "neha@gmail.com",
-  //     phone: 7845621301,
-  //     age: 25,
-  //     gender: "F",
-  //     city: "Patna",
-  //     fee: 748521,
-  //   },
-  //   {
-  //     name: "Mohan",
-  //     email: "mohan@gmail.com",
-  //     phone: 7845621590,
-  //     age: 35,
-  //     gender: "M",
-  //     city: "Delhi",
-  //     fee: 456125,
-  //   },
-  //   {
-  //     name: "Sweety",
-  //     email: "sweety@gmail.com",
-  //     phone: 741852912,
-  //     age: 17,
-  //     gender: "F",
-  //     city: "Noida",
-  //     fee: 458796,
-  //   },
-  //   {
-  //     name: "Vikas",
-  //     email: "vikas@gmail.com",
-  //     phone: 9876543210,
-  //     age: 20,
-  //     gender: "M",
-  //     city: "Mumbai",
-  //     fee: 874569,
-  //   },
-  //   {
-  //     name: "Raj",
-  //     email: "Raj@gmail.com",
-  //     phone: 7894561230,
-  //     age: null,
-  //     gender: "M",
-  //     city: "Chennai",
-  //     fee: 78456,
-  //   },
-  //   {
-  //     name: "Mohan",
-  //     email: "mohan@gmail.com",
-  //     phone: 7845621590,
-  //     age: 35,
-  //     gender: "M",
-  //     city: "Delhi",
-  //     fee: 456125,
-  //   },
-  //   {
-  //     name: "Sweety",
-  //     email: "sweety@gmail.com",
-  //     phone: 741852912,
-  //     age: 17,
-  //     gender: "F",
-  //     city: "Noida",
-  //     fee: 458796,
-  //   },
-  //   {
-  //     name: "Vikas",
-  //     email: "vikas@gmail.com",
-  //     phone: 9876543210,
-  //     age: 20,
-  //     gender: "M",
-  //     city: "Mumbai",
-  //     fee: 874569,
-  //   },
-  // ]);
-  // const columns = [
-  //   {
-  //     title: "Name",
-  //     field: "name",
-  //     sorting: false,
-  //     filtering: false,
-  //     cellStyle: { background: "#009688" },
-  //     headerStyle: { color: "#fff" },
-  //   },
-  //   { title: "Email", field: "email", filterPlaceholder: "filter" },
-  //   { title: "Phone Number", field: "phone", align: "center", grouping: false },
-  //   {
-  //     title: "Age",
-  //     field: "age",
-  //     emptyValue: () => <em>null</em>,
-  //     render: (rowData) => (
-  //       <div
-  //         style={{
-  //           background: rowData.age >= 18 ? "#008000aa" : "#f90000aa",
-  //           borderRadius: "4px",
-  //           paddingLeft: 5,
-  //         }}
-  //       >
-  //         {rowData.age >= 18 ? "18+" : "18-"}
-  //       </div>
-  //     ),
-  //     searchable: false,
-  //     export: false,
-  //   },
-  //   { title: "Gender", field: "gender", lookup: { M: "Male", F: "Female" } },
-  //   { title: "City", field: "city", filterPlaceholder: "filter" },
-  //   {
-  //     title: "School Fee",
-  //     field: "fee",
-  //     type: "currency",
-  //     currencySetting: { currencyCode: "INR", minimumFractionDigits: 1 },
-  //     cellStyle: { background: "#009688" },
-  //     headerStyle: { color: "#fff" },
-  //   },
-  // ];
+  const [tableData, setTableData] = useState([
+    {
+      name: "Raj",
+      email: "Raj@gmail.com",
+      phone: 7894561230,
+      age: null,
+      gender: "M",
+      city: "Chennai",
+      fee: 78456,
+    },
+    {
+      name: "Mohan",
+      email: "mohan@gmail.com",
+      phone: 7845621590,
+      age: 35,
+      gender: "M",
+      city: "Delhi",
+      fee: 456125,
+    },
+    {
+      name: "Sweety",
+      email: "sweety@gmail.com",
+      phone: 741852912,
+      age: 17,
+      gender: "F",
+      city: "Noida",
+      fee: 458796,
+    },
+    {
+      name: "Vikas",
+      email: "vikas@gmail.com",
+      phone: 9876543210,
+      age: 20,
+      gender: "M",
+      city: "Mumbai",
+      fee: 874569,
+    },
+    {
+      name: "Neha",
+      email: "neha@gmail.com",
+      phone: 7845621301,
+      age: 25,
+      gender: "F",
+      city: "Patna",
+      fee: 748521,
+    },
+    {
+      name: "Mohan",
+      email: "mohan@gmail.com",
+      phone: 7845621590,
+      age: 35,
+      gender: "M",
+      city: "Delhi",
+      fee: 456125,
+    },
+    {
+      name: "Sweety",
+      email: "sweety@gmail.com",
+      phone: 741852912,
+      age: 17,
+      gender: "F",
+      city: "Noida",
+      fee: 458796,
+    },
+    {
+      name: "Vikas",
+      email: "vikas@gmail.com",
+      phone: 9876543210,
+      age: 20,
+      gender: "M",
+      city: "Mumbai",
+      fee: 874569,
+    },
+    {
+      name: "Raj",
+      email: "Raj@gmail.com",
+      phone: 7894561230,
+      age: null,
+      gender: "M",
+      city: "Chennai",
+      fee: 78456,
+    },
+    {
+      name: "Mohan",
+      email: "mohan@gmail.com",
+      phone: 7845621590,
+      age: 35,
+      gender: "M",
+      city: "Delhi",
+      fee: 456125,
+    },
+    {
+      name: "Sweety",
+      email: "sweety@gmail.com",
+      phone: 741852912,
+      age: 17,
+      gender: "F",
+      city: "Noida",
+      fee: 458796,
+    },
+    {
+      name: "Vikas",
+      email: "vikas@gmail.com",
+      phone: 9876543210,
+      age: 20,
+      gender: "M",
+      city: "Mumbai",
+      fee: 874569,
+    },
+  ]);
+  const columns = [
+    {
+      title: "Name",
+      field: "name",
+      sorting: false,
+      filtering: false,
+      cellStyle: { background: "#009688" },
+      headerStyle: { color: "#fff" },
+    },
+    { title: "Email", field: "email", filterPlaceholder: "filter" },
+    { title: "Phone Number", field: "phone", align: "center", grouping: false },
+    {
+      title: "Age",
+      field: "age",
+      emptyValue: () => <em>null</em>,
+      render: (rowData) => (
+        <div
+          style={{
+            background: rowData.age >= 18 ? "#008000aa" : "#f90000aa",
+            borderRadius: "4px",
+            paddingLeft: 5,
+          }}
+        >
+          {rowData.age >= 18 ? "18+" : "18-"}
+        </div>
+      ),
+      searchable: false,
+      export: false,
+    },
+    { title: "Gender", field: "gender", lookup: { M: "Male", F: "Female" } },
+    { title: "City", field: "city", filterPlaceholder: "filter" },
+    {
+      title: "School Fee",
+      field: "fee",
+      type: "currency",
+      currencySetting: { currencyCode: "INR", minimumFractionDigits: 1 },
+      cellStyle: { background: "#009688" },
+      headerStyle: { color: "#fff" },
+    },
+  ];
   return (
     <div className="">
       {/* this is the banner section  */}
@@ -343,7 +346,7 @@ function App() {
       <h1 align="center">React-App</h1>
       <h4 align="center">Crash Course on Material Table </h4>
 
-      {/* <MaterialTable
+      <MaterialTable
         columns={columns}
         data={tableData}
         editable={{
@@ -410,7 +413,7 @@ function App() {
         }}
         title="Student Information"
         icons={{ Add: () => <AddIcon /> }}
-      /> */}
+      />
       <h2>hh</h2>
     </div>
   );
