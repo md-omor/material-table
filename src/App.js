@@ -165,16 +165,14 @@ function App() {
   ];
   return (
     <>
-      <div className="">
-        <div className=" ">
-          <div className="container mx-auto flex w-full bannerBg h-[120px]  items-center p-5">
-            <div className="">
-              <img src="/images/DAINTREE.svg" alt="w-full h-full" />
-            </div>
-            <h1 className="text-white font-primary font-bold text-4xl w-full text-center">
-              Lorem ipsum dolor sit amet consectetur officiis.
-            </h1>
+      <div>
+        <div className="container mx-auto flex w-full bannerBg h-[120px]  items-center p-5">
+          <div className="">
+            <img src="/images/DAINTREE.svg" alt="w-full h-full" />
           </div>
+          <h1 className="text-white font-primary font-bold text-4xl w-full text-center">
+            Lorem ipsum dolor sit amet consectetur officiis.
+          </h1>
         </div>
 
         {/* this is the navbar section  */}
