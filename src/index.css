@@ -5,5 +5,5 @@
 @tailwind utilities;
 
 .bannerBg {
-  background-color: lightseagreen;
+  background-color: lightseagreen !important;
 }
